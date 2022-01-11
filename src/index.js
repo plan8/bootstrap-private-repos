@@ -11,6 +11,6 @@ Object.entries(dependencies)
     const [ dependency, branch ] = keyVal;
     const [ namespace, repo ] = dependency.split('/');
 
-    const output = execSync(`scripts/bootstrapDependencies.sh ${namespace.split('@').join('')} ${repo} ${branch}`);
+    const output = execSync(`node_modules/@plan8/bootstrap-private-repos/src/bootstrapDependencies.sh ${namespace.split('@').join('')} ${repo} ${branch}`);
     console.log(output.toString());
   });
