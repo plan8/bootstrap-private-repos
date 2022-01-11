@@ -19,4 +19,5 @@ simply installs packages listed in the package.json under "privateDependencies" 
 }
 ```
 
+mainly for internal use.
 
