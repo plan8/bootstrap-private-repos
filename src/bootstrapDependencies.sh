@@ -8,9 +8,9 @@ mkdir node_modules/@${NAMESPACE} # fails without consequence if it exists
 
 if [ -z "$GIT_TOKEN" ]
 then
-  git clone --branch ${COMMIT} git@github.com:${NAMESPACE}/${REPO}.git ./node_modules/@${NAMESPACE}/${REPO}
+  git clone --depth 1 --branch ${COMMIT} git@github.com:${NAMESPACE}/${REPO}.git ./node_modules/@${NAMESPACE}/${REPO}
 else
-  git clone --branch ${COMMIT} https://${GIT_TOKEN}:x-oauth-basic@github.com/${NAMESPACE}/${REPO}.git ./node_modules/@${NAMESPACE}/${REPO}
+  git clone --depth 1 --branch ${COMMIT} https://${GIT_TOKEN}:x-oauth-basic@github.com/${NAMESPACE}/${REPO}.git ./node_modules/@${NAMESPACE}/${REPO}
 fi
 
 echo "...added."
