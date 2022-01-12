@@ -4,7 +4,9 @@ REPO=$2
 COMMIT=$3
 
 echo "adding ${NAMESPACE}/${REPO}..."
-mkdir node_modules/@${NAMESPACE} # fails without consequence if it exists
+
+# add the private repo root directory if it does not exist
+[ ! -d "node_modules/@${NAMESPACE}" ] && mkdir node_modules/@${NAMESPACE}
 
 if [ -z "$GIT_TOKEN" ]
 then
