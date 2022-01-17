@@ -3,12 +3,15 @@ NAMESPACE=$1
 REPO=$2
 COMMIT=$3
 
+echo $NODE_ENV
+
 echo "adding ${NAMESPACE}/${REPO}..."
 
 # add the private repo root directory if it does not exist
 [ ! -d "node_modules/@${NAMESPACE}" ] && mkdir node_modules/@${NAMESPACE}
 
-if [ ! -d "node_modules/@${NAMESPACE}/${REPO}" ]
+# always pull the latest since we aren't using versions here
+if [ ! -d "node_modules/@${NAMESPACE}/${REPO}" ] || [ $CI = true ]
 then
   if [ -z "$GIT_TOKEN" ]
   then

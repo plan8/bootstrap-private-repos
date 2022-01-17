@@ -1,6 +1,6 @@
 {
   "name": "@plan8/bootstrap-private-repos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "bootstraps private github repos",
   "main": "src/index.js",
   "scripts": {
