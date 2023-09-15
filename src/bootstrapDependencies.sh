@@ -11,7 +11,7 @@ echo "adding ${NAMESPACE}/${REPO}..."
 [ ! -d "node_modules/@${NAMESPACE}" ] && mkdir node_modules/@${NAMESPACE}
 
 # always pull the latest since we aren't using versions here
-if [ ! -d "node_modules/@${NAMESPACE}/${REPO}" ] || [ $CI = true ]
+if [ ! -d "node_modules/@${NAMESPACE}/${REPO}" ] || [ "$CI" = true ]
 then
   if [ -z "$GIT_TOKEN" ]
   then
